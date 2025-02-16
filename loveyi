@@ -97,9 +97,87 @@
         </div>
     </div>
 
-    <!-- JavaScript逻辑保持不变 -->
     <script>
-        // JavaScript代码保持不变
+        // 获取按钮和新内容的元素
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const newContent = document.getElementById('newContent');
+        const shockedContent = document.getElementById('shockedContent');
+        const angryContent = document.getElementById('angryContent');
+        const cryingContent = document.getElementById('cryingContent');
+        const yesAgainButton = document.getElementById('yesAgain');
+        const noAgainButton = document.getElementById('noAgain');
+        const yesAgainButton2 = document.getElementById('yesAgain2');
+        const noAgainButton2 = document.getElementById('noAgain2');
+        const finalYesButton = document.getElementById('finalYes');
+
+        // 点击“可以”按钮后显示新内容
+        yesButton.addEventListener('click', function() {
+            // 隐藏原始内容
+            document.getElementById('mainImage').style.display = 'none';
+            document.getElementById('mainText').style.display = 'none';
+            document.querySelector('.buttons').style.display = 'none';
+
+            // 显示新内容
+            newContent.style.display = 'block';
+        });
+
+        // 点击“不要”按钮后显示震惊画面
+        noButton.addEventListener('click', function() {
+            // 隐藏原始内容
+            document.getElementById('mainImage').style.display = 'none';
+            document.getElementById('mainText').style.display = 'none';
+            document.querySelector('.buttons').style.display = 'none';
+
+            // 显示震惊画面
+            shockedContent.style.display = 'block';
+        });
+
+        // 点击震惊画面中的“可以”按钮
+        yesAgainButton.addEventListener('click', function() {
+            // 隐藏震惊画面
+            shockedContent.style.display = 'none';
+            angryContent.style.display = 'none';
+
+            // 显示新内容
+            newContent.style.display = 'block';
+        });
+
+        // 点击震惊画面中的“不要”按钮
+        noAgainButton.addEventListener('click', function() {
+            // 隐藏震惊画面
+            shockedContent.style.display = 'none';
+
+            // 显示“不许选不要”画面
+            angryContent.style.display = 'block';
+        });
+
+        // 点击“不许选不要”画面中的“可以”按钮
+        yesAgainButton2.addEventListener('click', function() {
+            // 隐藏“不许选不要”画面
+            angryContent.style.display = 'none';
+
+            // 显示新内容
+            newContent.style.display = 'block';
+        });
+
+        // 点击“不许选不要”画面中的“不要”按钮
+        noAgainButton2.addEventListener('click', function() {
+            // 隐藏“不许选不要”画面
+            angryContent.style.display = 'none';
+
+            // 显示“你只能和我和好”画面
+            cryingContent.style.display = 'block';
+        });
+
+        // 点击“你只能和我和好”画面中的“可以”按钮
+        finalYesButton.addEventListener('click', function() {
+            // 隐藏“你只能和我和好”画面
+            cryingContent.style.display = 'none';
+
+            // 显示最终的新内容
+            newContent.style.display = 'block';
+        });
     </script>
 </body>
 </html>
